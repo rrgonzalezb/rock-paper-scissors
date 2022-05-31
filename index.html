@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Rock-Paper-Scissors</title>
+</head>
+<body>
+    <script>
+    
+    function game() {
+    
+        var playerCounter = 0;
+        var computerCounter = 0;
+
+        for (playerCounter = 0, computerCounter = 0; playerCounter < 3, computerCounter < 3;) {
+
+            
+
+            function playRound() {
+
+                let playerSelection = prompt("Choose Rock, Paper or Scissor:", "");
+                console.log(playerSelection);
+
+                let randomNumber = Math.floor(Math.random() * 3) + 1;
+                
+                function computerPlay() {
+                    
+                    if (randomNumber == 1) {
+                        return('Rock');
+                    } else if (randomNumber == 2) {
+                        return('Paper');
+                    } else if (randomNumber == 3) {
+                        return('Scissors');
+                    }
+                }  
+            
+                let computerSelection = computerPlay();
+                console.log(computerSelection);
+
+                
+
+                //Paper beats Rock
+                if (playerSelection == 'Paper' && computerSelection == 'Rock') {
+                    playerCounter = playerCounter + 1;
+                    console.log(playerCounter);
+                    console.log(computerCounter);
+                    return('You win! Paper beats Rock');
+                } else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
+                    computerCounter = computerCounter + 1;
+                    console.log(playerCounter);
+                    console.log(computerCounter);
+                    return('You loose! Paper beats Rock');
+                }
+                //Rock beats Scissors
+                else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
+                    computerCounter = computerCounter + 1;
+                    console.log(playerCounter);
+                    console.log(computerCounter);
+                    return('You loose! Rock beats Scissors');
+                } else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
+                    playerCounter = playerCounter +1;
+                    console.log(playerCounter);
+                    console.log(computerCounter);
+                    return('You win! Rock beats Scissors');
+                }
+                //Scissors beats paper
+                else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
+                    playerCounter = playerCounter + 1;
+                    console.log(playerCounter);
+                    console.log(computerCounter);
+                    return('You win! Scissors beats paper');
+                } else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
+                    computerCounter = computerCounter + 1;
+                    console.log(playerCounter);
+                    console.log(computerCounter);
+                    return('You loose! Scissors beats Paper');
+                }
+                //Tie Rock Rock
+                else if (playerSelection == 'Rock' && computerSelection == 'Rock') {
+                    console.log(playerCounter);
+                    console.log(computerCounter);
+                    return("It's a tie!");
+                }
+                //Tie Paper Paper
+                else if(playerSelection == 'Paper' && computerSelection == 'Paper') {
+                    console.log(playerCounter);
+                    console.log(computerCounter);
+                    return("It's a tie!");
+                }
+                //Tie Scissors Scissors
+                else if(playerSelection == 'Scissors' && computerSelection == 'Scissors') {
+                    console.log(playerCounter);
+                    console.log(computerCounter);
+                    return("It's a tie!");
+                }
+
+            }
+            
+            console.log(playRound());
+
+            if (computerCounter == 3) {
+                return("Too bad... The computer wins the game!");
+            } else if (playerCounter == 3) {
+                return("Congratulations! You win the game!");
+            }
+
+        }
+
+    }
+
+    console.log(game());
+    game();
+
+    </script>
+</body>
+</html>
