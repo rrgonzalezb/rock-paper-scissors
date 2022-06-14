@@ -5,8 +5,11 @@
     <title>Rock-Paper-Scissors</title>
 </head>
 <body>
+
+    <h1>Rock - Paper - Scissors</h1>
+
     <script>
-    console.log("hello world");
+    
     function game() {
     
         var playerCounter = 0;
@@ -18,21 +21,18 @@
 
             function playRound() {
 
-                let playerSelection = prompt("Choose Rock, Paper or Scissor:", "");
+                let playerSelection = prompt("Choose Rock, Paper or Scissors:");
                 console.log(playerSelection);
-
-                let randomNumber = Math.floor(Math.random() * 3) + 1;
                 
                 function computerPlay() {
+                    let choice = pickRandom([
+                        'Rock',
+                        'Paper',
+                        'Scissors',
+                    ]);
+                    return choice;
                     
-                    if (randomNumber == 1) {
-                        return('Rock');
-                    } else if (randomNumber == 2) {
-                        return('Paper');
-                    } else if (randomNumber == 3) {
-                        return('Scissors');
-                    }
-                }  
+                };  
             
                 let computerSelection = computerPlay();
                 console.log(computerSelection);
@@ -92,24 +92,24 @@
                     console.log(playerCounter);
                     console.log(computerCounter);
                     return("It's a tie!");
-                }
+                };
 
-            }
+            };
             
-            console.log(playRound());
-
             if (computerCounter == 3) {
-                return("Too bad... The computer wins the game!");
-            } else if (playerCounter == 3) {
-                return("Congratulations! You win the game!");
-            }
+                    return("Too bad... The computer wins the game!");
+                } else if (playerCounter == 3) {
+                    return("Congratulations! You win the game!");
+                };
+            
 
-        }
+        };
 
-    }
+        
 
+    };
     console.log(game());
-    game();
+    
 
     </script>
 </body>
