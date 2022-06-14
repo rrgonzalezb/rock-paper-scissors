@@ -6,8 +6,6 @@
 </head>
 <body>
 
-    <h1>Rock - Paper - Scissors</h1>
-
     <script>
     
     function game(){
@@ -21,14 +19,15 @@
 
         for (computerCounter = 0 , playerCounter = 0 ; computerCounter < 3 , playerCounter < 3 ;) {
 
-            let playerSelection = prompt("Choose Rock, Paper or Scissors:");
+            let playerChoice = prompt("Choose Rock, Paper or Scissors:");
+            let playerSelection = playerChoice.toLowerCase();
             console.log(playerSelection);
 
             function computerPlay() {
                 let choices =[
-                    'Rock',
-                    'Paper',
-                    'Scissors',
+                    'rock',
+                    'paper',
+                    'scissors',
                 ];
                 let randomNumber = Math.floor(Math.random() * 3);
                 let choice = choices[randomNumber];
@@ -40,36 +39,36 @@
         
             function playRound() {
                 //Paper beats Rock
-                if (playerSelection == 'Paper' && computerSelection == 'Rock') {
+                if (playerSelection == 'paper' && computerSelection == 'rock') {
                     playerCounter++;
                     console.log(playerCounter);
                     console.log(computerCounter);
                     return 'You win! Paper beats Rock';
-                } else if (playerSelection == 'Rock' && computerSelection == 'Paper') {
+                } else if (playerSelection == 'rock' && computerSelection == 'paper') {
                     computerCounter++;
                     console.log(playerCounter);
                     console.log(computerCounter);
                     return 'You lose! Paper beats Rock';
                 }
                 //Rock beats Scissors
-                else if (playerSelection == 'Scissors' && computerSelection == 'Rock') {
+                else if (playerSelection == 'scissors' && computerSelection == 'rock') {
                     computerCounter++;
                     console.log(playerCounter);
                     console.log(computerCounter);
                     return 'You lose! Rock beats Scissors';
-                } else if (playerSelection == 'Rock' && computerSelection == 'Scissors') {
+                } else if (playerSelection == 'rock' && computerSelection == 'scissors') {
                     playerCounter++;
                     console.log(playerCounter);
                     console.log(computerCounter);
                     return 'You win! Rock beats Scissors';
                 }
                 //Scissors beats paper
-                else if (playerSelection == 'Scissors' && computerSelection == 'Paper') {
+                else if (playerSelection == 'scissors' && computerSelection == 'paper') {
                     playerCounter++;
                     console.log(playerCounter);
                     console.log(computerCounter);
                     return 'You win! Scissors beats paper';
-                } else if (playerSelection == 'Paper' && computerSelection == 'Scissors') {
+                } else if (playerSelection == 'paper' && computerSelection == 'scissors') {
                     computerCounter++;
                     console.log(playerCounter);
                     console.log(computerCounter);
